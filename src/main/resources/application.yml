@@ -7,10 +7,10 @@ spring:
     gateway:
       routes:
         - id: path_route
-          uri: lb://clienthi #http://127.0.0.1:7002
+          uri: http://localhost:8080/ #lb://clienthi
 #           http://20.20.56.114:8080/
           predicates:
-            - Path=/meteor_93/**
+            - Path=/abc/**
           filters:
                 - StripPrefix=1           # 去除原请求地址中的meteor_93
 eureka:
