@@ -10,7 +10,7 @@ spring:
           uri: http://localhost:8080/ #lb://clienthi
 #           http://20.20.56.114:8080/
           predicates:
-            - Path=/abc/**
+            - Path=/abc/** 
           filters:
                 - StripPrefix=1           # 去除原请求地址中的meteor_93
 eureka:
