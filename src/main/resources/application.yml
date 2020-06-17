@@ -7,12 +7,20 @@ spring:
     gateway:
       routes:
         - id: path_route
-          uri: http://localhost:8080/ #lb://clienthi
+          uri: http://localhost:7001/ #lb://clienthi
 #           http://20.20.56.114:8080/
           predicates:
-            - Path=/abc/** 
+            - Path=/abc/**
           filters:
-                - StripPrefix=1           # 去除原请求地址中的meteor_93
+                - StripPrefix=1           # 去除原请求地址中的abc
+
+        - id: path_route1
+          uri: lb://CLIENTHI
+          #           http://20.20.56.114:8080/
+          predicates:
+            - Path=/bcd/**
+          filters:
+            - StripPrefix=1           # 去除原请求地址中的abc
 eureka:
   instance:
     prefer-ip-address: true
